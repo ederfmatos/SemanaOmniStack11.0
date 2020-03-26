@@ -48,11 +48,7 @@ module.exports = {
       .first();
 
     if (incident.ong_id !== ong_id) {
-      return res
-        .status(401)
-        .json({
-          message: `operation not permited, ong_id: ${ong_id}, incident.ong_id: ${incident.ong_id}`
-        });
+      return res.status(401).json({ message: "operation not permited" });
     }
 
     await connection("incidents")
